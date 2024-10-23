@@ -15,10 +15,10 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      <FoodContextProvider>
+      <div className="container overflow-hidden">
         <QueryClientProvider client={queryClient}>
-          <BrowserRouter>
-            <div className="container overflow-hidden">
+          <FoodContextProvider>
+            <BrowserRouter>
               <Navbar />
 
               <Routes>
@@ -27,10 +27,10 @@ function App() {
                 <Route path="/meals/:cat" element={<Meals />} />
                 <Route path="/meal/:id" element={<MealDetails />} />
               </Routes>
-            </div>
-          </BrowserRouter>
+            </BrowserRouter>
+          </FoodContextProvider>
         </QueryClientProvider>
-      </FoodContextProvider>
+      </div>
     </>
   );
 }
