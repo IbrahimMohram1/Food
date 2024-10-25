@@ -110,7 +110,7 @@ export default function Animate() {
                 <img
                   src={FoodItem[currentDish].image}
                   alt="Main Dish"
-                  className="lg:w-[150px] lg:h-[150px] w-[90px] h-[90px]"
+                  className="lg:w-[150px] lg:h-[150px] w-[100px] h-[100px]"
                 />
               </div>
               <button
@@ -142,7 +142,7 @@ export default function Animate() {
                       alt={`dish ${index + 1}`}
                       className={`dish ${
                         currentDish === index ? "active" : ""
-                      } lg:w-[100px] lg:h-[100px] w-[50px] h-[50px] `}
+                      } lg:w-[100px] lg:h-[100px] w-[80px] h-[80px] `}
                       style={{
                         transform: `translate(${transformX}px, ${transformY}px) `,
                         opacity: currentDish === index ? 1 : 0.6,
