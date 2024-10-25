@@ -101,7 +101,7 @@ export default function Animate() {
           <div className="w-full lg:w-1/2">
             <div className="dish-container">
               <button
-                className="arrow left-arrow lg:left-36 left-[-40px]  bg-[#629584] p-2 rounded-md"
+                className="arrow left-arrow lg:left-36 left-[-30px]  bg-[#629584] p-2 rounded-md"
                 onClick={handlePrevious}
               >
                 <FaArrowDown />
@@ -114,7 +114,7 @@ export default function Animate() {
                 />
               </div>
               <button
-                className="arrow right-arrow lg:right-36 right-[-40px] bg-[#629584] p-2 rounded-md"
+                className="arrow right-arrow lg:right-36 right-[-30px] bg-[#629584] p-2 rounded-md"
                 onClick={handleNext}
               >
                 <FaArrowDown />
