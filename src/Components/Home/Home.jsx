@@ -56,8 +56,9 @@ export default function Home() {
 
   return (
     <>
+      <Animate />
       <header className="bg-[#629584]">
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between ">
           <div className="w-full lg:w-1/2  ">
             <img src={img} alt="Img" className="w-full " />
           </div>

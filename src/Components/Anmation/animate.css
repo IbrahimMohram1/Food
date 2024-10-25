@@ -8,8 +8,7 @@
 }
 
 .main-dish img {
-    width: 180px;
-    height: 180px;
+  
     border-radius: 50%;
     object-fit: cover;
     z-index: 2;
@@ -19,18 +18,14 @@
 .dishes-arc {
     position: absolute;
     width: 100%;
-    height: 400px;
     display: flex;
     justify-content: center;
-    align-items: end;
     z-index: 1;
-    top: 0;
 }
 
 .dishes-arc img {
     position: absolute;
-    width: 100px;
-    height: 100px;
+
     border-radius: 50%;
     opacity: 0.7;
 }
@@ -44,3 +39,9 @@ color: #fff;
     position: absolute;
     
 }
+
+        .backGround {
+        background: radial-gradient(circle at 70% 50%, rgba(187, 235, 187, 1), rgba(255, 255, 255, 0) 60%);
+            margin: 0;
+        }
+

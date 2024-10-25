@@ -57,7 +57,6 @@ export default function Navbar() {
                   className="block py-2 px-3 text-dark"
                   aria-current="page"
                 >
-                  {" "}
                   Home
                 </Link>
               </li>

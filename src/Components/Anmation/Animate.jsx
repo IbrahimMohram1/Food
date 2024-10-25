@@ -84,46 +84,75 @@ export default function Animate() {
 
   return (
     <>
-      <div className="flex justify-center items-center">
-        <div className="dish-container">
-          <button
-            className="arrow left-arrow left-36  bg-[#629584] p-2 rounded-md"
-            onClick={handlePrevious}
-          >
-            <FaArrowDown />
-          </button>
-          <div className="main-dish">
-            <motion.div>
-              <img src={FoodItem[currentDish].image} alt="Main Dish" />
-            </motion.div>
+      <div className="backGround p-8 h-vh-100">
+        <div className="flex justify-center items-center flex-wrap">
+          <div className="w-full lg:w-1/2">
+            <h1 className="navfont text-4xl my-2">Welcome In TestBite</h1>
+            <p className="fontHeader">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus alias illum assumenda, voluptates ex maiores modi
+              repellat obcaecati natus ratione, aliquid tempora voluptatibus
+              aperiam quis perspiciatis veniam consequuntur nihil impedit quod
+              necessitatibus autem delectus! Reiciendis laudantium cum soluta
+              blanditiis id ipsam ut, eveniet nemo atque vero ad, quam ea odit.
+            </p>
           </div>
-          <button
-            className="arrow right-arrow right-36 bg-[#629584] p-2 rounded-md"
-            onClick={handleNext}
-          >
-            <FaArrowDown />
-          </button>
 
-          <div className="dishes-arc overflow-hidden">
-            {FoodItem.map((dish, index) => {
-              const angle = (index - currentDish) * (360 / FoodItem.length); // توزيع الأطباق في دائرة كاملة
-              const x = 230 * Math.cos((angle * Math.PI) / 180); // إحداثي X
-              const y = -230 * Math.sin((angle * Math.PI) / 180); // إحداثي Y
-              return (
+          <div className="w-full lg:w-1/2">
+            <div className="dish-container">
+              <button
+                className="arrow left-arrow lg:left-36 left-10  bg-[#629584] p-2 rounded-md"
+                onClick={handlePrevious}
+              >
+                <FaArrowDown />
+              </button>
+              <div className="main-dish">
                 <img
-                  onClick={() => setCurrentDish(index)}
-                  key={dish.id}
-                  src={dish.image}
-                  alt={`dish ${index + 1}`}
-                  className={`dish ${currentDish === index ? "active" : ""}`}
-                  style={{
-                    transform: `translate(${x}px, ${y}px)`,
-                    opacity: currentDish === index ? 1 : 0.6,
-                    transition: "transform 0.5s, opacity 0.5s",
-                  }}
+                  src={FoodItem[currentDish].image}
+                  alt="Main Dish"
+                  className="lg:w-[150px] lg:h-[150px] w-[50px] h-[50px]"
                 />
-              );
-            })}
+              </div>
+              <button
+                className="arrow right-arrow lg:right-36 right-10 bg-[#629584] p-2 rounded-md"
+                onClick={handleNext}
+              >
+                <FaArrowDown />
+              </button>
+
+              <div className="dishes-arc overflow-hidden items-center lg:items-end lg:top-0 h-[250px] lg:h-[400px]">
+                {FoodItem.map((dish, index) => {
+                  const angle = (index - currentDish) * (360 / FoodItem.length); // توزيع الأطباق في دائرة كاملة
+                  const x = 230 * Math.cos((angle * Math.PI) / 180); // إحداثي X
+                  const y = -230 * Math.sin((angle * Math.PI) / 180); // إحداثي Y
+                  const transformX =
+                    window.innerWidth < 640
+                      ? 100 * Math.cos((angle * Math.PI) / 180)
+                      : x;
+                  const transformY =
+                    window.innerWidth < 640
+                      ? -100 * Math.sin((angle * Math.PI) / 180)
+                      : y;
+
+                  return (
+                    <img
+                      onClick={() => setCurrentDish(index)}
+                      key={dish.id}
+                      src={dish.image}
+                      alt={`dish ${index + 1}`}
+                      className={`dish ${
+                        currentDish === index ? "active" : ""
+                      } lg:w-[100px] lg:h-[100px] w-[50px] h-[50px] `}
+                      style={{
+                        transform: `translate(${transformX}px, ${transformY}px) `,
+                        opacity: currentDish === index ? 1 : 0.6,
+                        transition: "transform 0.5s, opacity 0.5s",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
