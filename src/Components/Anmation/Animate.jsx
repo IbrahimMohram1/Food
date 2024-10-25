@@ -110,7 +110,7 @@ export default function Animate() {
                 <img
                   src={FoodItem[currentDish].image}
                   alt="Main Dish"
-                  className="lg:w-[150px] lg:h-[150px] w-[50px] h-[50px]"
+                  className="lg:w-[150px] lg:h-[150px] w-[90px] h-[90px]"
                 />
               </div>
               <button
