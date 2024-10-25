@@ -123,8 +123,8 @@ export default function Animate() {
               <div className="dishes-arc overflow-hidden items-end top-[10%] lg:top-0 h-[250px] lg:h-[400px]">
                 {FoodItem.map((dish, index) => {
                   const angle = (index - currentDish) * (360 / FoodItem.length); // توزيع الأطباق في دائرة كاملة
-                  const x = 230 * Math.cos((angle * Math.PI) / 180); // إحداثي X
-                  const y = -230 * Math.sin((angle * Math.PI) / 180); // إحداثي Y
+                  const x = 250 * Math.cos((angle * Math.PI) / 180); // إحداثي X
+                  const y = -250 * Math.sin((angle * Math.PI) / 180); // إحداثي Y
                   const transformX =
                     window.innerWidth < 640
                       ? 110 * Math.cos((angle * Math.PI) / 180)
