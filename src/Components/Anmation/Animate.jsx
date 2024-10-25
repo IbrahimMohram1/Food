@@ -142,7 +142,7 @@ export default function Animate() {
                       alt={`dish ${index + 1}`}
                       className={`dish ${
                         currentDish === index ? "active" : ""
-                      } lg:w-[100px] lg:h-[100px] w-[80px] h-[80px] `}
+                      } lg:w-[100px] lg:h-[100px] w-[50px] h-[50px] `}
                       style={{
                         transform: `translate(${transformX}px, ${transformY}px) `,
                         opacity: currentDish === index ? 1 : 0.6,
