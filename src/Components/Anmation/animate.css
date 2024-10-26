@@ -39,9 +39,3 @@ color: #fff;
     position: absolute;
     
 }
-
-        .backGround {
-        background: radial-gradient(circle at 70% 50%, rgba(187, 235, 187, 1), rgba(255, 255, 255, 0) 60%);
-            margin: 0;
-        }
-

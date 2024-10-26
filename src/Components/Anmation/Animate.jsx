@@ -101,7 +101,7 @@ export default function Animate() {
           <div className="w-full lg:w-2/3">
             <div className="dish-container">
               <button
-                className="arrow left-arrow lg:left-36 left-[-30px]  bg-[#629584] p-2 rounded-md"
+                className="arrow left-arrow lg:left-6 left-[-30px]  bg-[#629584] p-2 rounded-md"
                 onClick={handlePrevious}
               >
                 <FaArrowDown />
@@ -114,13 +114,13 @@ export default function Animate() {
                 />
               </div>
               <button
-                className="arrow right-arrow lg:right-36 right-[-30px] bg-[#629584] p-2 rounded-md"
+                className="arrow right-arrow lg:right-6 right-[-30px] bg-[#629584] p-2 rounded-md"
                 onClick={handleNext}
               >
                 <FaArrowDown />
               </button>
 
-              <div className="dishes-arc overflow-hidden lg:items-end top-[-10%] items-end lg:top-[-5%]  h-[250px] lg:h-[400px]">
+              <div className="dishes-arc overflow-hidden lg:items-end top-[-10%] items-end   h-[250px] lg:h-[400px]">
                 {FoodItem.map((dish, index) => {
                   const angle = (index - currentDish) * (360 / FoodItem.length); // توزيع الأطباق في دائرة كاملة
                   const x = 280 * Math.cos((angle * Math.PI) / 180); // إحداثي X

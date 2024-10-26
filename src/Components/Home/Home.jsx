@@ -10,8 +10,17 @@ import UseMeals from "../../Hooks/UseMeals";
 import Animate from "../Anmation/Animate";
 export default function Home() {
   const [VisibleItem, setVisibleItem] = useState(15);
+  const [loading, setLoading] = useState(false);
   const showMoreItems = () => {
     setVisibleItem(VisibleItem + 10);
+  };
+  const [Value, setValue] = useState("");
+  const HandleSelectChange = (value) => {
+    setLoading(true);
+    MealsByArea(value).finally(() => {
+      setValue(value);
+      setLoading(false);
+    });
   };
   let { mealsArea, term, MealsByArea } = useContext(FoodContext);
   let { category, area, meals, mealsLoading } = UseMeals();
@@ -109,51 +118,61 @@ export default function Home() {
               </div>
             ))}
           </Slider>
-          <div className="flex  justify-between items-center">
-            {term && term !== "" ? (
-              <h1 className="text-4xl italic my-5">Popular Meals in {term} </h1>
-            ) : (
-              <h1 className="text-4xl italic my-5">Popular Meals</h1>
-            )}
-            <h1 className="font-bold text-2xl mt-10 mb-3 font-mono"></h1>
+          {loading ? (
+            <Loading />
+          ) : (
+            <div>
+              <div className="flex  justify-between items-center">
+                {term && term !== "" ? (
+                  <h1 className="text-4xl italic my-5">
+                    Popular Meals in {term}{" "}
+                  </h1>
+                ) : (
+                  <h1 className="text-4xl italic my-5">Popular Meals</h1>
+                )}
+                <h1 className="font-bold text-2xl mt-10 mb-3 font-mono"></h1>
 
-            <form className="max-w-sm ">
-              <select
-                onChange={(event) => MealsByArea(event.target.value)}
-                id="countries"
-                className="bg-gray-50 border border-gray-300-blue-500 block w-full p-2.5 mt-10 mb-3 "
-              >
-                <option value={""}>Popular Meals</option>
-                {area?.map((ar, idx) => (
-                  <option value={ar.strArea} key={idx}>
-                    {ar.strArea}
-                  </option>
-                ))}
-              </select>
-            </form>
-          </div>
-          <hr className="w-12 h-1 bg-orange-400 mb-5" />
-          <div className="flex  items-center  flex-wrap">
-            {dataToDisplay?.slice(0, VisibleItem)?.map((meal) => (
-              <div key={meal.idMeal} className="lg:w-1/4 px-2 my-2 w-full ">
-                <Link to={`/meal/${meal.idMeal}`}>
-                  <div>
-                    <img
-                      rel="preload"
-                      src={meal?.strMealThumb}
-                      alt={meal?.strMeal}
-                      className="w-full rounded-md"
-                    />
-                  </div>
-                  <div className="my-2">
-                    <h2 className="text-lg ">
-                      {meal.strMeal.substring(0, 25)}
-                    </h2>
-                  </div>
-                </Link>
+                <form className="max-w-sm ">
+                  <select
+                    value={Value}
+                    onChange={(event) => HandleSelectChange(event.target.value)}
+                    id="countries"
+                    className="bg-gray-50 border border-gray-300-blue-500 block w-full p-2.5 mt-10 mb-3 "
+                  >
+                    <option value={""}>Popular Meals</option>
+
+                    {area?.map((ar, idx) => (
+                      <option value={ar.strArea} key={idx}>
+                        {ar.strArea}
+                      </option>
+                    ))}
+                  </select>
+                </form>
               </div>
-            ))}
-          </div>
+              <hr className="w-12 h-1 bg-orange-400 mb-5" />
+              <div className="flex  items-center  flex-wrap">
+                {dataToDisplay?.slice(0, VisibleItem)?.map((meal) => (
+                  <div key={meal.idMeal} className="lg:w-1/4 px-2 my-2 w-full ">
+                    <Link to={`/meal/${meal.idMeal}`}>
+                      <div>
+                        <img
+                          rel="preload"
+                          src={meal?.strMealThumb}
+                          alt={meal?.strMeal}
+                          className="w-full rounded-md"
+                        />
+                      </div>
+                      <div className="my-2">
+                        <h2 className="text-lg ">
+                          {meal.strMeal.substring(0, 25)}
+                        </h2>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           <div className=" flex justify-center items-center m-2">
             {VisibleItem < dataToDisplay?.length && (
               <button
