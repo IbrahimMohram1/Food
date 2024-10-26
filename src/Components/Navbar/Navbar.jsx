@@ -62,18 +62,12 @@ export default function Navbar() {
               </li>
               <li>
                 <Link
-                  to={"/about"}
+                  to={"/allmeals"}
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 "
                 >
-                  About
+                  AllMeals
                 </Link>
               </li>
-              <li>
-                <a className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 ">
-                  Category
-                </a>
-              </li>
-              <li></li>
             </ul>
           </div>
         </div>
