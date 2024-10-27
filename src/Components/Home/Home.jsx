@@ -10,10 +10,11 @@ import UseMeals from "../../Hooks/UseMeals";
 import Animate from "../Anmation/Animate";
 export default function Home() {
   const [VisibleItem, setVisibleItem] = useState(15);
-  const [loading, setLoading] = useState(false);
   const showMoreItems = () => {
     setVisibleItem(VisibleItem + 10);
   };
+  const [loading, setLoading] = useState(false);
+
   const [Value, setValue] = useState("");
   const HandleSelectChange = (value) => {
     setLoading(true);

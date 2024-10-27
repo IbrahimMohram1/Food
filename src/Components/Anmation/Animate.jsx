@@ -22,7 +22,8 @@ const FoodItem = [
   },
   {
     id: 3,
-    image: Spiner3,
+    image:
+      "https://w1.pngwing.com/pngs/722/675/png-transparent-cooking-varenyky-pierogi-jiaozi-pelmeni-borscht-food-dish.png",
     angle: 225,
   },
   {

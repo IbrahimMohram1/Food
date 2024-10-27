@@ -68,6 +68,14 @@ export default function Navbar() {
                   AllMeals
                 </Link>
               </li>
+              <li>
+                <Link
+                  to={"/alldrinks"}
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 "
+                >
+                  Drinks
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

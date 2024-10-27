@@ -11,6 +11,8 @@ import Meals from "./Components/Meals/Meals";
 import MealDetails from "./Components/MealDetails/MealDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import AllMeals from "./Components/AllMeals/AllMeals";
+import AllDrinks from "./Components/AllDrinks/AllDrinks";
+import DrinkDetails from "./Components/DrinkDetails/DrinkDetails";
 const queryClient = new QueryClient();
 
 function App() {
@@ -26,8 +28,9 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="*" element={<NotFound />} />
                 <Route path="allmeals" element={<AllMeals />} />
-
+                <Route path="alldrinks" element={<AllDrinks />} />
                 <Route path="/meals/:cat" element={<Meals />} />
+                <Route path="/drink/:id" element={<DrinkDetails />} />
                 <Route path="/meal/:id" element={<MealDetails />} />
               </Routes>
             </BrowserRouter>
