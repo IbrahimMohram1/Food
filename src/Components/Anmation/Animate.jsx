@@ -90,12 +90,11 @@ export default function Animate() {
           <div className="w-full lg:w-1/3">
             <h1 className="navfont text-4xl my-2">Welcome In TestBite</h1>
             <p className="fontHeader">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Repellendus alias illum assumenda, voluptates ex maiores modi
-              repellat obcaecati natus ratione, aliquid tempora voluptatibus
-              aperiam quis perspiciatis veniam consequuntur nihil impedit quod
-              necessitatibus autem delectus! Reiciendis laudantium cum soluta
-              blanditiis id ipsam ut, eveniet nemo atque vero ad, quam ea odit.
+              "Welcome to Foods & Drinks, where every dish and drink tells a
+              story. Discover global flavors crafted to inspire and excite, from
+              classic favorites to unique new finds. Whether you're exploring or
+              craving something specific, there’s always a taste adventure
+              waiting for you. Dive in and let your senses travel the world!"
             </p>
           </div>
 
